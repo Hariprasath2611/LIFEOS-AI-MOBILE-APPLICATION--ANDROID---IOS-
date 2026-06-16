@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, TextInput, ActivityIndicator 
 import { useNoteStore } from '../../store/noteStore';
 import { GlassCard } from '../../components/GlassCard';
 import { GlassButton } from '../../components/GlassButton';
-import Svg, { Path } from 'react-native-svg';
+import Svg, { Path, Circle } from 'react-native-svg';
 
 export default function NotesScreen() {
   const { notes, isLoading, fetchNotes, addNote, updateNote, deleteNote } = useNoteStore();

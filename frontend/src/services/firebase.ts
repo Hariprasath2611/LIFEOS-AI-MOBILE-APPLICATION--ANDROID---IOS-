@@ -7,8 +7,9 @@ import {
   sendPasswordResetEmail,
   User as FirebaseUser,
   initializeAuth,
-  getReactNativePersistence
 } from 'firebase/auth';
+// @ts-ignore
+import { getReactNativePersistence } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // In a real environment, replace these placeholders with process.env / EAS secrets

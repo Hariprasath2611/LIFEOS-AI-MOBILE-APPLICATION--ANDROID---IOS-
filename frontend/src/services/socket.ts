@@ -13,7 +13,7 @@ const getSocketURL = () => {
 let socket: Socket | null = null;
 
 export const connectSocket = async (
-  onChunk: (data: { chunk: string; fullResponse: string }) => void,
+  onChunk: (data: { conversationId: string; chunk: string; fullResponse: string }) => void,
   onComplete: (data: any) => void,
   onTypingStatus: (data: { userId: string; isTyping: boolean }) => void
 ): Promise<Socket> => {
