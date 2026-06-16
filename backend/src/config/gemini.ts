@@ -1,19 +1,15 @@
-import { GoogleGenAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-let aiClient: any = null;
+let aiClient: GoogleGenerativeAI | null = null;
 let isGeminiConfigured = false;
 
 if (GEMINI_API_KEY) {
   try {
-    // Note: The newer SDK can be initialized with new GoogleGenAI({ apiKey }) 
-    // or through the legacy GoogleGenerativeAI from @google/generative-ai.
-    // Let's import GoogleGenerativeAI as well to be compatible with different versions.
-    const { GoogleGenerativeAI } = require('@google/generative-ai');
     aiClient = new GoogleGenerativeAI(GEMINI_API_KEY);
     console.log('Gemini API initialized successfully.');
     isGeminiConfigured = true;
